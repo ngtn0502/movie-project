@@ -1,4 +1,4 @@
-import { GET_MOVIE_LIST } from '../utils/movie.constants.jsx';
+import { GET_MOVIE_LIST } from '../store/actions/movie.constants.jsx';
 
 const init = {
   movieList: [],

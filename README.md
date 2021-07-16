@@ -9,10 +9,13 @@
    2. Component: chứa các component có thể reuse trong page
       1. Header
    3. Redux: chua rootReducer and childReducer
-   4. Store: chua action va store
+   4. Store: chua action, store, action type constant
 
 2. Admin
    -Thêm xóa sửa phim, thao tác với user.
+
+3. APIs
+   -Gíup tách axios ra file riêng, để dễ quản lý
 
 ## yarn create react-app app-name
 
@@ -76,3 +79,25 @@ https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01
 tips: sau khi truyền mapStateToProps vào component của react dev tool kiểm tra đã có props chưa
 
 tips2: để biết cần lấy state nào từ reducer -> ra phần `state` của redux dev tool coi
+
+5. in `home page` render list of movieList to JSX by function
+
+6. Do call APIs trong component `home page` quá bất tiện nên ta dùng `Redux middleware`
+
+### Redux middleware
+
+Sinh ra để tối ưu performance cho code
+
+Để không cần `dispatch` data sau khi call `APIs`, ta cần dùng `middleware` redux-thunk, redux-saga => call `APIs` ngay trong action
+
+ <img src="./public/drawMiddleware.png" alt="d">
+
+---
+
+Ta `call APIs` trong `action` không cần thông qua component
+
+Nói ngắn gọn `middleware` giúp chúng ta xử lý bất đồng bộ trong `action`, **_dispatch an action in action_**
+
+7. Thêm một file để gọi axios riêng biệt để dễ chỉnh sửa, debug
+
+8. Chia card.movie.component ra riêng để dễ quản lý
