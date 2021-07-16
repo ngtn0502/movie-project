@@ -1,0 +1,21 @@
+.modal__singIn {
+  position: fixed;
+  width: 70%;
+  top: 30vh;
+  height: 200px;
+  z-index: 100;
+  color: red;
+  margin: 0 auto;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+/*# sourceMappingURL=modal.styles.css.map */

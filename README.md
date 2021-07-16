@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# PROJECT MOVIE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Bố cục, phân tích chia folder
 
-## Available Scripts
+1. Main
+   -Giúp khách hàng thao tác trên trang web, xem danh sách phim, giỏ hàng,...
 
-In the project directory, you can run:
+   1. Page: dùng để phân chia các trang
+   2. Component: chứa các component có thể reuse trong page
+      1. Header
+   3. Redux: chua rootReducer and childReducer
+   4. Store: chua action va store
 
-### `yarn start`
+2. Admin
+   -Thêm xóa sửa phim, thao tác với user.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## yarn create react-app app-name
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## cd app-name
 
-### `yarn test`
+## yarn Start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install Bootstrap
 
-### `yarn build`
+```
+yarn add bootstrap@4.0.0
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Down grade version of bootstrap
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+yarn add jquery bootstrap popper.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## yarn add node-sass@4.14.1
 
-### `yarn eject`
+Phien ban on dinh cua yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Note
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cau truc thu muc
+10h17
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tại sao các website lớn như VNExpress có load trang
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+=> Những MPA website khi load phải tạo html từ sever-side-render thì phải load trang => Nhưng hỗ trợ về SEO tốt hơn
 
-## Learn More
+=> Những SPA website không load trang thì html được tạo từ client-side-render => nhưng hỗ trợ SEO không mạnh
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+=> Để giải quyết vấn đề này thì phải sử dụng FrameWork Next.JS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Lý do bên trong là ta sử dụng thẻ meta để hỗ trợ SEo, nhưng vì SPA chỉ có một page HTML nên chỉ có một thẻ meta. Còn client-side-rendering thì mỗi lần load tạo ra một thẻ HTML nên SEO được nhiều thẻ meta
 
-### Code Splitting
+## Call APIs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+tại component did mount do bất đồng bộ
 
-### Analyzing the Bundle Size
+https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 14/7 - Buoi 1 - movie Project
 
-### Making a Progressive Web App
+1. Chia cau truc thu muc
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. React Router, React Router DOM
 
-### Advanced Configuration
+## 16/7 - Buoi 2 - movie Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. create store, reducer
 
-### Deployment
+2. create actions folder, constants type
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. In `home page` link component with store
 
-### `yarn build` fails to minify
+4. dispatch action (contain data movie) to store by function `getMovieList` in `hone page`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+tips: sau khi truyền mapStateToProps vào component của react dev tool kiểm tra đã có props chưa
+
+tips2: để biết cần lấy state nào từ reducer -> ra phần `state` của redux dev tool coi

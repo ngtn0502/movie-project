@@ -4,9 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Bootstrap
+import '../node_modules/jquery/dist/jquery';
+import '../node_modules/popper.js/dist/popper';
+import '../node_modules/bootstrap/dist/js/bootstrap';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+// Set up  redux
+import { Provider } from 'react-redux';
+import { store } from './module/store/store.jsx';
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* provide redux store for all component */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
