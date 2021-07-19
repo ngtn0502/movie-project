@@ -28,7 +28,7 @@ class Home extends Component {
   }
 }
 
-/// for take props
+/// for convert dispatch to props
 // Tách dispatch ra thành một hàm riêng để dễ quản lý
 // Phương thức map này phải trả về một object với cặp key/value với key là props của component cái mà truyền vào higher-order-component
 

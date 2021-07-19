@@ -101,3 +101,17 @@ Nói ngắn gọn `middleware` giúp chúng ta xử lý bất đồng bộ trong
 7. Thêm một file để gọi axios riêng biệt để dễ chỉnh sửa, debug
 
 8. Chia card.movie.component ra riêng để dễ quản lý
+
+## 19/7 - Buoi 2 - movie Project
+
+1. call aip ở component didmount ở page movie detail
+
+   - Xác định chổ cần call API
+   - Viết hàm call api.
+   - Viết action creator thunk để call api để tránh một bước call api thông qua component, chỉ call api qua action creator xong truyền thẳng vào store luôn
+
+2. sign in
+
+   - call api khi submit form
+   - khi submit form thì dispatch action => action đó call api ra gởi lên stỏe
+   - ở page sign in lấy dữ liệu từ trên store về
